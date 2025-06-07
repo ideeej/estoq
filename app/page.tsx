@@ -1,9 +1,9 @@
-import Image from "next/image";
+import {Package} from "lucide-react";
 
 export default function Home() {
   return (
     <div className="">
-      Está é a página principal
+      Página principal.
     </div>
   );
 }

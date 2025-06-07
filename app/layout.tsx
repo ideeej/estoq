@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import {House, ScrollText, Settings, CircleUser} from "lucide-react";
+import {House, ScrollText, Settings, CircleUser, PlusCircle} from "lucide-react";
 import Link from "next/link";
 
 const geistSans = Geist({
@@ -30,28 +30,31 @@ export default function RootLayout({
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable} antialiased
-          flex flex-col h-screen w-screen bg-slate-800 px-[20%] py-[5%]`}
+          flex flex-col h-screen w-screen bg-slate-800 lg:px-[20%] lg:py-[5%]`}
       >
       <div className="flex-grow text-slate-800 bg-slate-100">
         {children}
       </div>
       <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
-          <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+          <div className="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
               <Link href="/" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-                  <House className="group-hover:text-blue-600"></House>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Home</span>
+                  <House className="group-focus:text-blue-600 group-hover:text-blue-600"></House>
+                  <span className="group-focus:text-blue-600 group-active:text-blue-600 text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Home</span>
               </Link>
               <Link href="/products" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-                  <ScrollText className="group-hover:text-blue-600"></ScrollText>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Lista</span>
+                  <ScrollText className="group-focus:text-blue-600 group-hover:text-blue-600"></ScrollText>
+                  <span className="group-focus:text-blue-600 group-active:text-blue-600 text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Lista</span>
               </Link>
+              <button type="button" className="hover:cursor-pointer inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <PlusCircle size="48px" className="group-hover:text-blue-600 group-active:text-blue-600"></PlusCircle>
+              </button>
               <Link href="/settings" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-                  <Settings className="group-hover:text-blue-600"></Settings>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Configurações</span>
+                  <Settings className="group-focus:text-blue-600 group-hover:text-blue-600"></Settings>
+                  <span className="group-focus:text-blue-600 text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Configurações</span>
               </Link>
               <Link href="/profile" className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-                  <CircleUser className="group-hover:text-blue-600"></CircleUser>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Conta</span>
+                  <CircleUser className="group-focus:text-blue-600 group-hover:text-blue-600"></CircleUser>
+                  <span className="group-focus:text-blue-600 text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Conta</span>
               </Link>
           </div>
       </div>
